@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Agregar Cliente</title>
+        <title>Agregar Producto</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,6 +24,8 @@
         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     </head>
     <body>
+
+
 
         <div class="d-flex" id="content-wrapper">
 
@@ -84,49 +89,41 @@
                 </nav>
                 <!-- Fin Navbar -->
                 <br>
+
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
                             <br>
-                            <h1 class="text-center">Registro de Clientes</h1>
+                            <h1 class="text-center">Registro de Roles</h1>
                             <div class="card-body">
-                                <form th:action="@{/clientes}" th:object="${cliente}" method="POST">
+                                
+                                <form th:action="@{/roles}" th:object="${rol}" method="POST">
+                                    <div class="form-group">
+                                        <label>Id-Rol: </label>
+                                        <input type="text" name="idrol" th:field="*{idrol}" class="form-control" placeholder="Digite su Id " required>
+                                    </div>
+
+
                                     <div class="form-group">
                                         <label>Nombre: </label>
-                                        <input type="text" name="nombre" th:field="*{nombres}" class="form-control" placeholder="Digite su nombre: " required>
+                                        <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Digite su nombre de user: " required>
                                     </div>
 
 
                                     <div class="form-group">
-                                        <label>Apellido: </label>
-                                        <input type="text" name="apellido" th:field="*{apellidos}" class="form-control" placeholder="Digite su apellido: " required>
+                                        <label>Estado: </label>
+                                        <input type="text" name="estado" th:field="*{estado}" class="form-control" placeholder="Digite el estado: " required>
                                     </div>
-
-
-                                    <div class="form-group">
-                                        <label>Dni: </label>
-                                        <input type="text" name="dni" th:field="*{dni}" class="form-control" placeholder="Digite su dni: " required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Telefono: </label>
-                                        <input type="text" name="telefono" th:field="*{telefono}" class="form-control" placeholder="Digite su telefono: " required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Correo: </label>
-                                        <input type="email" name="correo" th:field="*{correo}" class="form-control" placeholder="Digite su email: " required>
-                                    </div>
-
+                                    
                                     <br>
                                     <div class="box-footer">
                                         <button class="btn btn-success">Guardar</button>
                                     </div>
                                 </form>
 
-                                
+
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -182,6 +179,5 @@
                 }
             });
         </script>
-
     </body>
 </html>
